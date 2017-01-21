@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8' />
+    	<link href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css" rel="stylesheet" >
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+		<link href='/styles/style.css' rel='stylesheet' />
+        <!-- <link rel='stylesheet' href='/libs/range/range.css' /> -->
+
+        <link rel="icon" type="image/png" href="/img/icon_2.png" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Natural-script</title>
+	</head>
+
+	<body ng-app="naturalScript" ng-controller="MainCtrl">
+		<div class="button-repository"><a class="button-repository-link" href="https://github.com/thibaultfriedrich/natural-script"><i class="ui icon github"></i></a></div>
+		<footer class="footer">Made with <i class="ui icon heart"></i> in Grenoble</footer>
+        <div class="main ui middle aligned center aligned grid" ng-class="{'main-visible':ready}">
+            <div class="main-column column">
+
+                <h1>natural script</h1>
+                <img class="main-icon" src="/img/waves-light.png">
+				<div class="main-example">
+					ns.parse(A, B)
+				</div>
+				<div class="main-input-container">
+					<div class="main-input-title">A:</div>
+                	<input class="main-input" type="text" placeholder="English language" ng-model="englishExpression"  ng-change="parse()">
+				</div>
+				<div class="main-input-container">
+					<div class="main-input-title">B:</div>
+					<input class="main-input" type="text" placeholder="Natural script" ng-model="scriptExpression" ng-change="parse()">
+				</div>
+
+				<!-- <button class="main-button" ng-click="parse()">Parse</button> -->
+                <div class="main-results middle aligned center aligned grid">
+					<!-- <div class="invisible" ng-if="type != 'object'"></div> -->
+					<div class="main-feedback" ng-show="waiting">
+						<img class="main-loader" src="/img/loader-white.png">
+					</div>
+					<div class="main-feedback" ng-show="!waiting">
+						<div class="main-bool main-bool-green" ng-show="type == 'true'">true</div>
+						<i class="zmdi zmdi-check ui icon large" ng-show="type == 'true'"></i>
+						<!-- <i class="ui icon checkmark white large" ng-show="type == 'true'"></i> -->
+						<div class="main-bool main-bool-red" ng-show="type == 'false'">false</div>
+						<i class="zmdi zmdi-close ui icon large" ng-show="type == 'false'"></i>
+						<!-- <i class="ui icon remove white large" ng-show="type == 'false'"></i> -->
+						<pre class="main-json" ng-if="type == 'object'" ng-bind-html="result | prettyJson">
+						</pre>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="ui sidebar inverted vertical menu icon labeled" sidebar>
+          <h1 class="menu-header">Canvas</h1>
+          <a class="item" ng-click="gotoGallery()">
+              <i class="plus icon"></i> Add Canvas
+          </a>
+          <a class="item" ng-click="gotoList()" ng-if="user.allCanvas().length > 0">
+              <i class="list icon"></i> My Canvas
+          </a>
+        </div>
+        <div class="pusher">
+            <div class="main" ng-view>
+            </div>
+        </div> -->
+	</body>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-sanitize.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/services/socket.js"></script>
+	<script src="app/filters/pretty-json.js"></script>
+    <script src="app/controllers/main.js"></script>
+
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90690000-1', 'auto');
+      ga('send', 'pageview');
+
+    </script> -->
+
+</html>

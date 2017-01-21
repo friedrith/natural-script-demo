@@ -1,8 +1,8 @@
 'use strict';
 app.controller('MainCtrl', function($scope, $timeout, socket) {
 
-    $scope.englishExpression = 'What time is it in London today ?';
-    $scope.scriptExpression = 'what time is it {{capital_city}} {{date}}';
+    $scope.englishExpression = 'What time will it be tomorrow in London?';
+    $scope.scriptExpression = 'what time will it be {{date}} {{capital_city}}?';
 
     $scope.waiting = false;
 

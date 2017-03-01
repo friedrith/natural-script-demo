@@ -4,9 +4,10 @@
 		<meta charset='utf-8' />
     	<link href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css" rel="stylesheet" >
     	<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet" >
-        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet"> -->
+		<!-- <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto+Mono" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
 		<link href='/styles/style.css' rel='stylesheet' />
@@ -19,14 +20,15 @@
 
 	<body ng-app="naturalScript" ng-controller="MainCtrl">
 		<div class="button-repository"><a class="button-repository-link" href="https://github.com/thibaultfriedrich/natural-script"><i class="ui icon github"></i></a></div>
+		<header class="header"><img class="header-icon" src="/img/waves-light.png"> natural script</header>
 		<footer class="footer">Made with <i class="ui icon heart"></i> in Grenoble</footer>
         <div class="main ui middle aligned center aligned grid" ng-class="{'main-visible':ready}">
             <div class="main-column column">
 
-                <h1>natural script</h1>
-                <img class="main-icon" src="/img/waves-light.png">
+                <!-- <h1>natural script</h1> -->
+                <!-- <img class="main-icon" src="/img/waves-light.png"> -->
 				<div class="main-example">
-					ns.parse(A, B)
+					ns.parse(A,B)
 				</div>
 				<div class="main-input-container">
 					<div class="main-input-title">A:</div>

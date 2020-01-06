@@ -9,6 +9,10 @@ const app = express()
 
 app.use(cors())
 
+app.get('/hello', (req, res) => {
+  res.send('Hello world')
+})
+
 app.get('/parse', async (req, res) => {
   const output = await parse(req.query.english, req.query.expected)
   res.send({ output })

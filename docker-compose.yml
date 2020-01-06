@@ -1,0 +1,21 @@
+version: "3.2"
+services:
+  natural-script-demo:
+    image: natural-script-demo:latest
+    build: .
+    restart: always
+    environment:
+      - PORT
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - traefik.enable=true
+      - "traefik.frontend.rule=Host:${HOST}"
+      - traefik.backend=assistant-os
+      - traefik.port=3000
+      - traefik.frontend.entryPoints=https
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

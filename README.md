@@ -5,7 +5,7 @@ Demo for natural-script
 ## Getting started
 
 ```bash
-$ docker-compose build
+$ docker-compose build .
 $ docker-compose up -d
 
 ```

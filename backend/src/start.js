@@ -10,7 +10,7 @@ const app = express()
 app.use(cors())
 
 app.get('/hello', (req, res) => {
-  res.send('Hello world')
+  res.send('natural-script-demo')
 })
 
 app.get('/parse', async (req, res) => {

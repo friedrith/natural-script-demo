@@ -11,7 +11,7 @@ services:
     labels:
       - traefik.enable=true
       - "traefik.frontend.rule=Host:${HOST}"
-      - traefik.backend=assistant-os
+      - traefik.backend=natural-script-demo
       - traefik.port=3000
       - traefik.frontend.entryPoints=https
     networks:
